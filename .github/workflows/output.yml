@@ -1,0 +1,11 @@
+name: Output
+on:
+  issues:
+    types: [opened, edited, deleted]
+jobs:
+  eventdetails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show event details
+        run: echo '${{toJSON(github.event)}}'
+
